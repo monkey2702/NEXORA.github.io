@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexora — Building the future of the web.</title>
+<title>Portfólio & Briefing — Nexora</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -501,209 +501,425 @@
     .tb-cell{ border-left:none !important; border-top:1px solid var(--grid-line-strong); }
     .tb-cell:first-child{ border-top:none; }
   }
+
+  /* ---------- PORTFOLIO PAGE ---------- */
+  .page-hero{
+    padding:80px 0 60px;
+    position:relative;
+  }
+  .page-hero .mono-label{ display:block; margin-bottom:16px; }
+  .page-hero h1{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(2rem, 4.6vw, 3.4rem);
+    line-height:1.1;
+    max-width:720px;
+  }
+  .page-hero p{
+    margin-top:18px;
+    color:var(--paper-dim);
+    font-size:1.08rem;
+    max-width:560px;
+    line-height:1.6;
+  }
+  .breadcrumb{
+    font-family:var(--font-mono);
+    font-size:0.78rem;
+    color:var(--paper-dim);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .breadcrumb a{ color:var(--accent); }
+  .breadcrumb a:hover{ text-decoration:underline; }
+
+  .portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--grid-line-strong);
+    border:1px solid var(--grid-line-strong);
+  }
+  .project-card{
+    background:var(--bg);
+    padding:0;
+    position:relative;
+    overflow:hidden;
+    transition:background 0.25s;
+  }
+  .project-card:hover{ background:var(--bg-deep); }
+  .project-thumb{
+    aspect-ratio:4/3;
+    position:relative;
+    border-bottom:1px solid var(--grid-line-strong);
+    overflow:hidden;
+  }
+  .project-thumb svg{ width:100%; height:100%; }
+  .project-body{ padding:26px; }
+  .project-tag{
+    font-family:var(--font-mono);
+    font-size:0.72rem;
+    color:var(--accent);
+    letter-spacing:0.06em;
+  }
+  .project-card h3{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1.15rem;
+    margin-top:10px;
+  }
+  .project-card p{
+    margin-top:8px;
+    color:var(--paper-dim);
+    font-size:0.9rem;
+    line-height:1.55;
+  }
+  .project-meta{
+    margin-top:14px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .project-meta span{
+    font-family:var(--font-mono);
+    font-size:0.68rem;
+    color:var(--paper-dim);
+    border:1px solid var(--grid-line-strong);
+    padding:3px 8px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  @media (max-width:900px){ .portfolio-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .portfolio-grid{ grid-template-columns:1fr; } }
+
+  /* briefing form */
+  .briefing{
+    background:var(--paper-bg);
+    color:var(--paper-ink);
+    padding:100px 0;
+    position:relative;
+  }
+  .briefing-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+  }
+  .briefing-intro .mono-label{ color:var(--accent-dim); display:block; margin-bottom:16px; }
+  .briefing-intro h2{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(1.8rem, 3.6vw, 2.6rem);
+    line-height:1.15;
+  }
+  .briefing-intro p{
+    margin-top:16px;
+    color:var(--paper-ink-dim);
+    font-size:1.02rem;
+    line-height:1.65;
+  }
+  .briefing-intro .contact-item{ margin-top:28px; }
+  .briefing-intro .tb-value{ font-family:var(--font-mono); font-size:0.92rem; }
+
+  form.briefing-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  .field label{
+    font-family:var(--font-mono);
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--accent-dim);
+  }
+  .field input, .field select, .field textarea{
+    font-family:var(--font-body);
+    font-size:0.98rem;
+    padding:13px 14px;
+    background:#fff;
+    border:1px solid rgba(14,42,71,0.2);
+    color:var(--paper-ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:2px solid var(--accent);
+    outline-offset:1px;
+    border-color:var(--accent);
+  }
+  .field textarea{ resize:vertical; min-height:120px; font-family:var(--font-body); }
+  .form-submit{
+    font-family:var(--font-mono);
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    padding:16px 26px;
+    background:var(--paper-ink);
+    color:var(--paper-bg);
+    border:1px solid var(--paper-ink);
+    font-weight:500;
+    transition:transform 0.15s, opacity 0.15s;
+    align-self:flex-start;
+  }
+  .form-submit:hover{ transform:translateY(-2px); opacity:0.9; }
+  .form-note{
+    font-family:var(--font-mono);
+    font-size:0.76rem;
+    color:var(--paper-ink-dim);
+  }
+  @media (max-width:760px){
+    .briefing-grid{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; }
+  }
 </style>
 </head>
 <body class="blueprint-grid">
 
   <header>
     <nav class="nav">
-      <div class="logo">
+      <a href="nexora.html" class="logo">
         <span class="logo-mark"></span>
         NEXORA
-      </div>
+      </a>
       <div class="nav-links">
-        <a href="#servicos">Serviços</a>
-        <a href="#processo">Processo</a>
-        <a href="portfolio.html">Portfólio</a>
-        <a href="portfolio.html#briefing" class="nav-cta">Iniciar projeto</a>
+        <a href="nexora.html">Início</a>
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#briefing" class="nav-cta">Enviar briefing</a>
       </div>
       <button class="nav-toggle" aria-label="Abrir menu">☰</button>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
     <div class="crosshair tl" style="color:var(--paper-dim)"></div>
     <div class="crosshair tr" style="color:var(--paper-dim)"></div>
-    <div class="wrap hero-inner">
-      <div>
-        <div class="hero-eyebrow">
-          <span class="mono-label">Agência de desenvolvimento web</span>
-        </div>
-        <h1>Building the <em>future</em> of the web.</h1>
-        <p class="lede">Projetamos e construímos sites e produtos digitais rápidos, escaláveis e feitos para durar — do rascunho ao deploy, sem retrabalho.</p>
-        <div class="hero-actions">
-          <a href="#contato" class="btn-primary">Começar projeto</a>
-          <a href="#servicos" class="btn-secondary">Ver serviços</a>
-        </div>
-      </div>
-
-      <div class="schematic" aria-hidden="true">
-        <svg viewBox="0 0 400 400" fill="none">
-          <!-- browser frame -->
-          <rect class="draw-line" x="40" y="40" width="320" height="230" rx="2" stroke="var(--line)" stroke-width="1.4"/>
-          <line class="draw-line" x1="40" y1="76" x2="360" y2="76" stroke="var(--line)" stroke-width="1"/>
-          <circle class="draw-line d2" cx="58" cy="58" r="4" stroke="var(--accent)" stroke-width="1.2"/>
-          <circle class="draw-line d2" cx="74" cy="58" r="4" stroke="var(--line)" stroke-width="1"/>
-          <circle class="draw-line d2" cx="90" cy="58" r="4" stroke="var(--line)" stroke-width="1"/>
-
-          <!-- header block -->
-          <rect class="draw-line d2" x="58" y="92" width="150" height="14" stroke="var(--line)" stroke-width="1"/>
-          <!-- hero block -->
-          <rect class="draw-line d3" x="58" y="120" width="284" height="70" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>
-          <!-- grid blocks -->
-          <rect class="draw-line d3" x="58" y="204" width="88" height="46" stroke="var(--line)" stroke-width="1"/>
-          <rect class="draw-line d3" x="156" y="204" width="88" height="46" stroke="var(--line)" stroke-width="1"/>
-          <rect class="draw-line d3" x="254" y="204" width="88" height="46" stroke="var(--line)" stroke-width="1"/>
-
-          <!-- dimension lines -->
-          <line class="draw-line d4" x1="40" y1="290" x2="360" y2="290" stroke="var(--paper-dim)" stroke-width="0.8"/>
-          <line class="draw-line d4" x1="40" y1="284" x2="40" y2="296" stroke="var(--paper-dim)" stroke-width="0.8"/>
-          <line class="draw-line d4" x1="360" y1="284" x2="360" y2="296" stroke="var(--paper-dim)" stroke-width="0.8"/>
-
-          <!-- leader lines + labels -->
-          <line class="draw-line d4" x1="342" y1="120" x2="380" y2="90" stroke="var(--paper-dim)" stroke-width="0.8"/>
-          <line class="draw-line d4" x1="146" y1="227" x2="30" y2="330" stroke="var(--paper-dim)" stroke-width="0.8"/>
-
-          <text class="fade-in-label fi1" x="150" y="320" font-family="IBM Plex Mono" font-size="9" fill="var(--paper-dim)" letter-spacing="1">320 UNITS</text>
-          <text class="fade-in-label fi2" x="200" y="150" font-family="IBM Plex Mono" font-size="9" fill="var(--accent)" letter-spacing="1">HERO SECTION</text>
-          <text class="fade-in-label fi3" x="0" y="345" font-family="IBM Plex Mono" font-size="9" fill="var(--paper-dim)" letter-spacing="1">COMPONENT GRID</text>
-          <text class="fade-in-label fi4" x="270" y="85" font-family="IBM Plex Mono" font-size="9" fill="var(--paper-dim)" letter-spacing="1">NAV — FIXED</text>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- SERVICES -->
-  <section id="servicos">
     <div class="wrap">
-      <div class="section-head">
-        <span class="mono-label">[ Serviços ]</span>
-        <h2>O que construímos</h2>
-        <p>Cada projeto começa como uma planta e termina como um produto no ar. Escolha o escopo — nós cuidamos da estrutura.</p>
-      </div>
+      <div class="breadcrumb"><a href="nexora.html">Início</a> / Portfólio</div>
+      <span class="mono-label">[ Portfólio ]</span>
+      <h1 style="margin-top:16px;">Modelos do que construímos por aqui.</h1>
+      <p>A Nexora está começando agora — por isso, em vez de estudos de caso, mostramos os tipos de projeto que sabemos construir bem. Escolha o que mais se parece com o seu e conte pra gente no formulário abaixo.</p>
     </div>
+  </section>
+
+  <!-- PORTFOLIO GRID -->
+  <section id="trabalhos" style="padding-top:20px;">
     <div class="wrap">
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="crosshair tl" style="color:var(--grid-line-strong)"></div>
-          <span class="service-tag">[ WEB ]</span>
-          <h3>Sites institucionais</h3>
-          <p>Presença digital rápida, responsiva e construída para converter — do primeiro rascunho ao ar em semanas.</p>
+      <div class="portfolio-grid">
+
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 300 225" fill="none">
+              <rect width="300" height="225" fill="var(--bg-deep)"/>
+              <rect x="20" y="20" width="260" height="24" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="20" y="56" width="260" height="80" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>
+              <rect x="20" y="148" width="80" height="56" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="110" y="148" width="80" height="56" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="200" y="148" width="80" height="56" fill="none" stroke="var(--line)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">[ MODELO ]</span>
+            <h3>Landing page para SaaS</h3>
+            <p>Página de captação com hero direto ao ponto, prova social e um único CTA claro.</p>
+            <div class="project-meta"><span>Web</span><span>Conversão</span></div>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="crosshair tl" style="color:var(--grid-line-strong)"></div>
-          <span class="service-tag">[ APP ]</span>
-          <h3>Produtos & SaaS</h3>
-          <p>Aplicações web completas — do zero ou sobre uma base existente, com arquitetura pensada para escalar.</p>
+
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 300 225" fill="none">
+              <rect width="300" height="225" fill="var(--bg-deep)"/>
+              <rect x="20" y="20" width="60" height="185" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="96" y="20" width="184" height="40" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>
+              <rect x="96" y="72" width="86" height="66" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="194" y="72" width="86" height="66" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="96" y="150" width="184" height="55" fill="none" stroke="var(--line)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">[ MODELO ]</span>
+            <h3>Dashboard interno</h3>
+            <p>Painel de controle com navegação lateral, cartões de métricas e tabelas de dados.</p>
+            <div class="project-meta"><span>App</span><span>Dados</span></div>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="crosshair tl" style="color:var(--grid-line-strong)"></div>
-          <span class="service-tag">[ API ]</span>
-          <h3>Integrações</h3>
-          <p>Conectamos seu produto a pagamentos, CRMs, IA e qualquer serviço que seu negócio precise falar com o mundo.</p>
+
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 300 225" fill="none">
+              <rect width="300" height="225" fill="var(--bg-deep)"/>
+              <rect x="20" y="20" width="260" height="24" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="20" y="56" width="80" height="90" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="110" y="56" width="80" height="90" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>
+              <rect x="200" y="56" width="80" height="90" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="20" y="158" width="260" height="46" fill="none" stroke="var(--line)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">[ MODELO ]</span>
+            <h3>Loja virtual</h3>
+            <p>Catálogo de produtos, filtros e checkout simplificado para vender direto pelo site.</p>
+            <div class="project-meta"><span>E-commerce</span><span>Vendas</span></div>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="crosshair tl" style="color:var(--grid-line-strong)"></div>
-          <span class="service-tag">[ PERF ]</span>
-          <h3>Performance & SEO</h3>
-          <p>Sites que carregam rápido e são encontrados. Auditoria técnica, Core Web Vitals e otimização contínua.</p>
+
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 300 225" fill="none">
+              <rect width="300" height="225" fill="var(--bg-deep)"/>
+              <rect x="20" y="20" width="260" height="60" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>
+              <rect x="20" y="94" width="120" height="110" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="152" y="94" width="128" height="52" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="152" y="152" width="128" height="52" fill="none" stroke="var(--line)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">[ MODELO ]</span>
+            <h3>Site institucional</h3>
+            <p>Apresentação da empresa, serviços e contato — pensado pra transmitir confiança rápido.</p>
+            <div class="project-meta"><span>Web</span><span>Institucional</span></div>
+          </div>
         </div>
+
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 300 225" fill="none">
+              <rect width="300" height="225" fill="var(--bg-deep)"/>
+              <rect x="20" y="20" width="260" height="24" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <circle cx="150" cy="112" r="46" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>
+              <rect x="20" y="168" width="120" height="36" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="160" y="168" width="120" height="36" fill="none" stroke="var(--line)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">[ MODELO ]</span>
+            <h3>App de agendamento</h3>
+            <p>Marcação de horários com calendário, confirmação automática e lembretes.</p>
+            <div class="project-meta"><span>App</span><span>Serviços</span></div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-thumb">
+            <svg viewBox="0 0 300 225" fill="none">
+              <rect width="300" height="225" fill="var(--bg-deep)"/>
+              <rect x="20" y="20" width="260" height="24" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="20" y="56" width="166" height="148" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3"/>
+              <rect x="200" y="56" width="80" height="68" fill="none" stroke="var(--line)" stroke-width="1"/>
+              <rect x="200" y="136" width="80" height="68" fill="none" stroke="var(--line)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">[ MODELO ]</span>
+            <h3>Blog & portal de conteúdo</h3>
+            <p>Publicação de artigos com boa leitura, categorias e otimização para busca.</p>
+            <div class="project-meta"><span>Web</span><span>SEO</span></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section id="processo" class="process-bg">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="mono-label">[ Processo ]</span>
-        <h2>Como construímos</h2>
-        <p>Um processo linear e previsível — como qualquer boa planta, cada fase depende da anterior.</p>
-      </div>
+  <div class="divider" style="margin-top:20px;"></div>
 
-      <div class="process-list">
-        <div class="process-item">
-          <div class="process-num"><span class="dot"></span>01</div>
-          <div>
-            <h3>Descoberta</h3>
-            <p>Mapeamos objetivos, usuários e restrições técnicas antes de desenhar qualquer tela.</p>
-          </div>
-        </div>
-        <div class="process-item">
-          <div class="process-num"><span class="dot"></span>02</div>
-          <div>
-            <h3>Design</h3>
-            <p>Wireframes e identidade visual alinhados à sua marca, validados com você antes de codar.</p>
-          </div>
-        </div>
-        <div class="process-item">
-          <div class="process-num"><span class="dot"></span>03</div>
-          <div>
-            <h3>Desenvolvimento</h3>
-            <p>Código limpo, versionado e revisado — construído para ser mantido, não só entregue.</p>
-          </div>
-        </div>
-        <div class="process-item">
-          <div class="process-num"><span class="dot"></span>04</div>
-          <div>
-            <h3>Deploy & Iteração</h3>
-            <p>Publicamos, monitoramos e ajustamos com base em dados reais de uso.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPECS -->
-  <section id="especificacoes" style="padding:0 0 100px;">
-    <div class="specs">
-      <div class="spec">
-        <span class="mono-label">Projetos entregues</span>
-        <div class="value">40<span>+</span></div>
-      </div>
-      <div class="spec">
-        <span class="mono-label">Uptime médio</span>
-        <div class="value">99<span>.9%</span></div>
-      </div>
-      <div class="spec">
-        <span class="mono-label">Carregamento médio</span>
-        <div class="value">1.2<span>s</span></div>
-      </div>
-      <div class="spec">
-        <span class="mono-label">Suporte</span>
-        <div class="value">24<span>/7</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section id="contato" class="cta-paper paper-grid" style="position:relative;">
+  <!-- BRIEFING -->
+  <section id="briefing" class="briefing paper-grid">
     <div class="crosshair tl" style="color:var(--paper-ink-dim)"></div>
-    <div class="crosshair bl" style="color:var(--paper-ink-dim)"></div>
-    <div class="stamp">APROVADO<br>PARA CONSTRUÇÃO</div>
-    <div class="wrap">
-      <span class="mono-label">[ Contato ]</span>
-      <h2 style="margin-top:16px;">Pronto para sair do papel?</h2>
-      <p>Conte um pouco sobre seu projeto e retornamos em até 1 dia útil com os próximos passos.</p>
-      <div class="hero-actions">
-        <a href="https://wa.me/5535998137022" class="btn-primary">Falar no WhatsApp</a>
-        <a href="portfolio.html#briefing" class="btn-secondary">Ver portfólio e enviar e-mail</a>
-      </div>
-      <div class="contact-info">
+    <div class="crosshair br" style="color:var(--paper-ink-dim)"></div>
+    <div class="wrap briefing-grid">
+      <div class="briefing-intro">
+        <span class="mono-label">[ Briefing ]</span>
+        <h2>Qual desses é o seu projeto?</h2>
+        <p>Escolha o modelo mais parecido com o que você precisa, preencha o formulário e a gente monta uma proposta sob medida. Sem compromisso.</p>
+
         <div class="contact-item">
-          <span class="mono-label">Telefone</span>
-          <a href="tel:+5535998137022" class="tb-value">(35) 99813-7022</a>
-        </div>
-        <div class="contact-item">
-          <span class="mono-label">E-mail — melhor opção</span>
-          <a href="portfolio.html#briefing" class="tb-value tb-value-accent">NexoraCDD@proton.me</a>
+          <span class="mono-label" style="color:var(--accent-dim);">Prefere falar direto?</span>
+          <a href="https://wa.me/5535998137022" class="tb-value" style="display:block; color:var(--paper-ink);">WhatsApp — (35) 99813-7022</a>
+          <a href="mailto:NexoraCDD@proton.me" class="tb-value tb-value-accent" style="display:block; margin-top:6px;">NexoraCDD@proton.me</a>
         </div>
       </div>
+
+      <form class="briefing-form" id="briefingForm">
+        <!-- Cole sua Access Key do web3forms.com aqui embaixo -->
+        <input type="hidden" name="access_key" value="99f2f4a2-6f78-4900-a56f-5299355bd9d7">
+        <input type="hidden" name="subject" value="Novo briefing de projeto — Nexora">
+        <input type="checkbox" name="botcheck" style="display:none;">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="bf-name">Nome</label>
+            <input id="bf-name" name="Nome" type="text" placeholder="Seu nome" required>
+          </div>
+          <div class="field">
+            <label for="bf-contact">E-mail ou WhatsApp</label>
+            <input id="bf-contact" name="Contato" type="text" placeholder="Como te respondemos?" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="bf-type">Tipo de projeto</label>
+          <select id="bf-type" name="Tipo de projeto">
+            <option>Landing page para SaaS</option>
+            <option>Dashboard interno</option>
+            <option>Loja virtual</option>
+            <option>Site institucional</option>
+            <option>App de agendamento</option>
+            <option>Blog / portal de conteúdo</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="bf-message">O que você quer que a gente construa?</label>
+          <textarea id="bf-message" name="Descrição do projeto" placeholder="Conte o objetivo do projeto, referências e prazo, se tiver." required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit" id="bf-submit">Enviar briefing</button>
+        <span class="form-note" id="bf-note">Ao enviar, sua mensagem chega direto na nossa caixa de entrada — sem abrir nenhum app.</span>
+      </form>
     </div>
   </section>
+
+  <script>
+    const briefingForm = document.getElementById('briefingForm');
+    const submitBtn = document.getElementById('bf-submit');
+    const note = document.getElementById('bf-note');
+
+    briefingForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(briefingForm);
+      const payload = Object.fromEntries(formData.entries());
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            briefingForm.reset();
+            submitBtn.textContent = 'Enviado ✓';
+            note.textContent = 'Recebemos seu briefing! Vamos responder em breve.';
+            note.style.color = 'var(--accent-dim)';
+          } else {
+            throw new Error(data.message || 'Falha no envio');
+          }
+        })
+        .catch(() => {
+          submitBtn.textContent = 'Enviar briefing';
+          submitBtn.disabled = false;
+          note.textContent = 'Não conseguimos enviar agora. Chama no WhatsApp ou tente novamente.';
+          note.style.color = '#B3261E';
+        });
+    });
+  </script>
 
   <!-- FOOTER -->
   <footer>
@@ -713,9 +929,9 @@
           <div class="tb-brand">NEXORA</div>
           <div class="tb-brand-sub">Building the future of the web.</div>
           <div class="footer-links">
-            <a href="#servicos">Serviços</a>
-            <a href="#processo">Processo</a>
-            <a href="#contato">Contato</a>
+            <a href="nexora.html">Início</a>
+            <a href="#trabalhos">Trabalhos</a>
+            <a href="#briefing">Briefing</a>
           </div>
         </div>
         <div class="tb-cell">
@@ -724,11 +940,11 @@
         </div>
         <div class="tb-cell">
           <span class="mono-label">E-mail — melhor opção</span>
-          <a href="portfolio.html#briefing" class="tb-value tb-value-accent" style="display:block; word-break:break-all;">NexoraCDD@proton.me</a>
+          <a href="mailto:NexoraCDD@proton.me" class="tb-value tb-value-accent" style="display:block; word-break:break-all;">NexoraCDD@proton.me</a>
         </div>
         <div class="tb-cell">
           <span class="mono-label">Folha</span>
-          <div class="tb-value">01 / 01</div>
+          <div class="tb-value">02 / 02</div>
         </div>
         <div class="tb-cell">
           <span class="mono-label">Rev.</span>
